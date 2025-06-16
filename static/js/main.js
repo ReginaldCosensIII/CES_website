@@ -1,17 +1,20 @@
 // static/js/main.js
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Mobile menu toggle logic from Header.tsx
-    const menuButton = document.querySelector('button.md\\:hidden');
-    const mobileNav = document.querySelector('.md\\:hidden.glass-effect');
+    // --- Mobile menu toggle logic ---
+    const menuButton = document.getElementById('menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
 
-    if (menuButton && mobileNav) {
+    if (menuButton && mobileMenu) {
         menuButton.addEventListener('click', () => {
-            mobileNav.classList.toggle('hidden');
+            // This will toggle a class to show/hide the menu
+            // and also change the icon from a hamburger to an 'X'
+            mobileMenu.classList.toggle('active'); 
+            menuButton.classList.toggle('is-active');
         });
     }
 
-    // Contact form submission logic from Contact.tsx
+    // --- Contact form submission logic ---
     const contactForm = document.querySelector('form');
     if (contactForm && window.location.pathname.includes('/contact')) {
         contactForm.addEventListener('submit', (e) => {
@@ -20,8 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const data = Object.fromEntries(formData.entries());
             console.log('Form submitted:', data);
             
-            // Here you would typically send the data to a server endpoint
-            // For this static conversion, we'll just show an alert.
+            // A custom modal would be better than an alert in a real application
             alert('Thank you for your message! We will contact you within 24 hours.');
             contactForm.reset();
         });

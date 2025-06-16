@@ -1,4 +1,5 @@
 <header class="header-style text-brand-navy shadow-lg">
+    <!-- **** CHANGE IS HERE: The background is now your main brand color **** -->
     <div class="py-2 px-8 bg-brand-navy text-gray-300">
         <div class="container mx-auto flex flex-wrap justify-between items-center text-sm">
             <div class="flex items-center space-x-6">
@@ -8,7 +9,7 @@
                 </div>
                 <div class="flex items-center space-x-2">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-                    <span class="font-medium">Info@CES.com</span>
+                    <span class="font-medium">Info@CESInc.com</span>
                 </div>
             </div>
             <div class="flex items-center space-x-2">
@@ -28,6 +29,7 @@
                 </div>
             </a>
 
+            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
                 <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
                 <a href="/support" class="nav-link {% if request.path == '/support' %}active{% endif %}">Technical Support</a>
@@ -38,9 +40,22 @@
                 <a href="/contact" class="btn-primary">Get Free Quote</a>
             </div>
 
-            <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors">
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors z-50" id="menu-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
             </button>
         </div>
     </nav>
+    
+    <!-- Mobile Menu Container -->
+    <div class="mobile-menu" id="mobile-menu">
+        <a href="/" class="nav-link">Home</a>
+        <a href="/support" class="nav-link">Technical Support</a>
+        <a href="/services" class="nav-link">Managed Services</a>
+        <a href="/solutions" class="nav-link">Business Solutions</a>
+        <a href="/about" class="nav-link">About Us</a>
+        <a href="/contact" class="nav-link">Contact</a>
+        <a href="/contact" class="btn-primary mt-4">Get Free Quote</a>
+    </div>
 </header>
