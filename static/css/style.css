@@ -1,0 +1,215 @@
+/*
+  This is the single, consolidated stylesheet for all custom styles.
+*/
+
+/* -- Brand Colors & Root Variables -- */
+:root {
+    --brand-navy: #2f4f4f; 
+    --brand-maroon: #660033;
+    --brand-slate: #334155;
+    --brand-cyan: var(--brand-maroon); /* This remains maroon for nav links */
+    --brand-blue: #3b82f6; /* The original blue for text links */
+    --brand-light: hsl(180, 10%, 97%);
+    --brand-gray: #64748b;
+}
+
+/* -- Base HTML Element Styles -- */
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: var(--brand-light);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--brand-navy);
+    font-weight: 600;
+}
+
+/* --- Color Utility Classes --- */
+.bg-brand-navy { background-color: var(--brand-navy); }
+.bg-brand-navy-light { background-color: hsl(180, 25%, 38%); }
+.bg-brand-light { background-color: var(--brand-light); }
+.text-brand-cyan { color: var(--brand-cyan); }
+.text-brand-blue { color: var(--brand-blue); }
+.text-brand-navy { color: var(--brand-navy); }
+.text-brand-gray { color: var(--brand-gray); }
+.text-gray-200 { color: #e5e7eb; }
+.text-gray-300 { color: #d1d5db; }
+.text-gray-500 { color: #6b7280; }
+.border-white { border-color: white; }
+.hover\:text-brand-navy:hover { color: var(--brand-navy); }
+.hover\:bg-white:hover { background-color: white; }
+
+/* -- Gradient Helper Classes -- */
+.hero-gradient { 
+    background-color: var(--brand-navy);
+    background-image: 
+        linear-gradient(to bottom right, hsla(180, 25%, 15%, 0.8), rgba(47, 79, 79, 0.8) 60%, hsla(180, 15%, 75%, 0.8) 85%, hsla(180, 10%, 96%, 0.8) 100%),
+        url('../images/hero-background.jpeg');
+    
+    background-size: cover;
+    background-position: center;
+}
+
+/* Restored maroon tech gradient */
+.tech-gradient { 
+    background: linear-gradient(135deg, hsl(330, 100%, 25%), var(--brand-maroon)); 
+}
+
+/* Restored header style */
+.header-gradient {
+    background: white; /* Changed back to white as per earlier decision */
+}
+
+
+/* --- Buttons --- */
+.btn-primary, .btn-secondary, .btn-outline, .btn-outline-white {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 600;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background-image: linear-gradient(135deg, hsl(330, 100%, 25%), var(--brand-maroon));
+    color: white;
+    background-size: 100%;
+}
+.btn-primary:hover {
+    filter: brightness(1.2);
+}
+
+.btn-secondary {
+    background-color: var(--brand-navy);
+    color: white;
+}
+.btn-secondary:hover {
+    background-color: hsl(180, 25%, 35%);
+}
+
+.btn-outline {
+    border: 2px solid var(--brand-cyan);
+    color: var(--brand-cyan);
+    background-color: transparent;
+}
+.btn-outline:hover {
+    background-color: var(--brand-cyan);
+    color: white;
+}
+
+.btn-outline-white {
+    border: 2px solid white;
+    color: white;
+    background-color: transparent;
+}
+.btn-outline-white:hover {
+    background-color: white;
+    color: var(--brand-navy);
+}
+
+/* --- Header Navigation --- */
+/* Restored dark text color for visibility on white header */
+.nav-link {
+    color: var(--brand-slate);
+    transition: color 0.3s ease;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 0.5rem;
+}
+.nav-link:hover {
+    color: var(--brand-cyan);
+}
+.nav-link.active {
+    color: var(--brand-cyan);
+}
+.nav-link.active::after {
+    content: '';
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--brand-cyan);
+    border-radius: 9999px;
+}
+
+/* --- Main Card Styles --- */
+.service-card {
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 0.75rem;
+    padding: 2rem;
+    transition: all 0.3s ease;
+}
+.service-card:hover {
+    border-color: rgba(47, 79, 79, 0.2);
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    transform: translateY(-0.25rem);
+}
+
+.testimonial-card {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -2px rgb(0 0 0 / 0.1);
+    transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    transform: translateY(-0.5rem);
+}
+
+/* --- Learn More Link --- */
+/* Restored blue link color */
+.learn-more-link {
+    display: inline-flex;
+    align-items: center;
+    color: var(--brand-blue);
+    font-weight: 600;
+    margin-top: 1.5rem;
+    transition: color 0.3s ease;
+}
+.learn-more-link:hover {
+    color: var(--brand-navy);
+}
+.learn-more-link svg {
+    margin-left: 0.25rem;
+    transition: transform 0.3s ease;
+}
+.learn-more-link:hover svg {
+    transform: translateX(2px);
+}
+
+/* --- Main Container for Stat Cards --- */
+.hero-card-container {
+    padding: 2.5rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    transition: all 0.3s ease;
+    display: none;
+}
+@media (min-width: 1024px) {
+    .hero-card-container {
+        display: block;
+    }
+}
+
+/* --- Individual Stat Cards --- */
+.hero-stat-card {
+    text-align: center;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+.hero-stat-card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+}
