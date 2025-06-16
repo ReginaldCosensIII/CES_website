@@ -1,5 +1,4 @@
 <header class="header-style text-brand-navy shadow-lg">
-    <!-- **** CHANGE IS HERE: The background is now your main brand color **** -->
     <div class="py-2 px-8 bg-brand-navy text-gray-300">
         <div class="container mx-auto flex flex-wrap justify-between items-center text-sm">
             <div class="flex items-center space-x-6">
@@ -29,8 +28,7 @@
                 </div>
             </a>
 
-            <!-- Desktop Menu -->
-            <div class="hidden md:flex items-center space-x-8">
+            <div class="hidden md:flex items-center space-x-6">
                 <a href="/" class="nav-link {% if request.path == '/' %}active{% endif %}">Home</a>
                 <a href="/support" class="nav-link {% if request.path == '/support' %}active{% endif %}">Technical Support</a>
                 <a href="/services" class="nav-link {% if request.path == '/services' %}active{% endif %}">Managed Services</a>
@@ -40,7 +38,6 @@
                 <a href="/contact" class="btn-primary">Get Free Quote</a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <button class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors z-50" id="menu-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -48,7 +45,6 @@
         </div>
     </nav>
     
-    <!-- Mobile Menu Container -->
     <div class="mobile-menu" id="mobile-menu">
         <a href="/" class="nav-link">Home</a>
         <a href="/support" class="nav-link">Technical Support</a>

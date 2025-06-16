@@ -40,6 +40,7 @@ h1, h2, h3, h4, h5, h6 {
 .hover\:bg-white:hover { background-color: white; }
 
 /* -- Gradient Helper Classes -- */
+/* **** CHANGE IS HERE: Added flex properties and min-height to ensure the hero section fills the screen **** */
 .hero-gradient { 
     background-color: var(--brand-navy);
     background-image: 
@@ -48,6 +49,10 @@ h1, h2, h3, h4, h5, h6 {
     
     background-size: cover;
     background-position: center;
+    /* These new properties make it fill the screen and center the content vertically */
+    display: flex;
+    align-items: center;
+    min-height: 100vh; /* Set minimum height to 100% of the viewport height */
 }
 
 .tech-gradient { 
@@ -221,12 +226,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* --- Mobile Menu Styles --- */
 .mobile-menu {
-    position: fixed; /* Changed to fixed to cover the whole screen */
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(47, 79, 79, 0.95); /* Semi-transparent brand color */
+    background-color: rgba(47, 79, 79, 0.95);
     backdrop-filter: blur(10px);
     display: flex;
     flex-direction: column;
@@ -236,8 +241,8 @@ h1, h2, h3, h4, h5, h6 {
     opacity: 0;
     transform: translateY(-100%);
     transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
-    pointer-events: none; /* Can't be clicked when hidden */
-    z-index: 40; /* Make sure it's on top of other content */
+    pointer-events: none;
+    z-index: 40;
 }
 
 .mobile-menu.active {
@@ -247,11 +252,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .mobile-menu .nav-link {
-    color: white; /* Mobile links should be white */
+    color: white;
     font-size: 1.5rem;
 }
 .mobile-menu .nav-link.active::after {
-    background-color: white; /* Active underline should also be white */
+    background-color: white;
 }
 
 
